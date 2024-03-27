@@ -6,4 +6,6 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, type,
 	return <input ref={ref} type={type} {...props} className={`input-base ${className}`} />;
 });
 
+Input.displayName = 'Input';
+
 export {Input};
