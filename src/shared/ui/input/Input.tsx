@@ -1,9 +1,9 @@
-import { InputHTMLAttributes } from 'react';
+import * as React from 'react';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {}
+export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 
-const Input: React.FC<InputProps> = ({ className, type, ...props }) => {
-	return <input type={type} {...props} className={`input-base ${className}`} />;
-};
+const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, type, ...props }, ref) => {
+	return <input ref={ref} type={type} {...props} className={`input-base ${className}`} />;
+});
 
 export default Input;

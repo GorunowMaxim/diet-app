@@ -100,6 +100,28 @@ sup {
 	color: inherit;
 }
 
+.link {
+	white-space: nowrap;
+	position: relative;
+	padding: 0px 0px 5px 0px;
+
+	&::after {
+		content: '';
+		position: absolute;
+		height: 2px;
+		left: 50%;
+		bottom: 0;
+		width: 0;
+		background-color: #000;
+		transition: all 0.3s;
+	}
+
+	&:hover::after {
+		width: 100%;
+		left: 0;
+	}
+}
+
 $base-color: #77ea7e;
 $color-background: #D0F2B1;
 $primary-color: #a2ec8e;
