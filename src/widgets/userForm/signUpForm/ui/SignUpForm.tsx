@@ -1,19 +1,26 @@
 'use client';
 
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { useState } from 'react';
 import Link from 'next/link';
 
 import Form from '@/shared/ui/form/Form';
-import Input from '@/shared/ui/input/Input';
+import { Input } from '@/shared/ui/input/Input';
 import Label from '@/shared/ui/label/Label';
 
 import '../../styles.scss';
+
 
 type Inputs = {
 	[index: string]: string;
 };
 
+// type UserData = {
+
+// }
+
 const SignUpForm = () => {
+	// const [userData, setUserData] = useState<>();
 	const {
 		register,
 		handleSubmit,

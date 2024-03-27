@@ -4,7 +4,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import Link from 'next/link';
 
 import Form from '@/shared/ui/form/Form';
-import Input from '@/shared/ui/input/Input';
+import { Input } from '@/shared/ui/input/Input';
 import Label from '@/shared/ui/label/Label';
 
 import '../../styles.scss';
@@ -75,7 +75,7 @@ const SignInForm = () => {
 						<img src='/images/github.svg' alt='' className='signin-card__socials-img' />
 					</div>
 					<p className='signin-card__acc-box'>
-						Don't have an account?
+						Don`&apos;`t have an account?
 						<Link className='link signin-card__link' href='/sign-up'>
 							Sign up
 						</Link>
