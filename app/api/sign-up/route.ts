@@ -11,12 +11,18 @@ export async function POST(req: Request) {
 
 		const { userName, email, password } = reqBody;
 
-		// const user = await User.findOne({ email });
+		const user = await User.findOne({ email });
+		const existUserName = await User.findOne({ userName });
 
-		// if (user) {
-		// 	NextResponse.json({ error: 'User already exists' });
-		// 	return;
-		// }
+		console.log(user, existUserName);
+
+		if (existUserName) {
+			return NextResponse.json({ error: 'User with this username already exists' }, {status: 400});
+		}
+
+		if (user) {
+			return NextResponse.json({ error: 'User with this email already exists' }, {status: 400});
+		}
 
 		const salt = await bcryptjs.genSalt(10);
 		const hashPassword = await bcryptjs.hash(password, salt);
@@ -27,10 +33,9 @@ export async function POST(req: Request) {
 			password: hashPassword,
 		});
 		const savedUser = await newUser.save();
-		console.log(newUser);
 
 		return NextResponse.json({ message: 'User created', success: true, savedUser });
 	} catch (error: any) {
-		return NextResponse.json({ error: error.message });
+		return NextResponse.json({ error: error.message }, {status: 500});
 	}
 }
