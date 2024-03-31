@@ -35,8 +35,8 @@ html {
 
 html,
 body {
-	min-width: 100%;
-	min-height: 100%;
+	width: 100%;
+	height: 100%;
 	font-size: 16px;
 }
 
@@ -101,8 +101,9 @@ sup {
 }
 
 .wrapper {
-	min-width: 100%;
-	min-height: 100vh;
+	position: relative;
+	width: 100%;
+	min-height: 900px;
 	background-image: url('/images/back-app.jpg');
 	background-size: 250px;
 }
@@ -126,6 +127,12 @@ sup {
 	&:hover::after {
 		width: 100%;
 		left: 0;
+	}
+}
+
+@media (min-height: 900px) {
+	.wrapper {
+		height: 100vh;
 	}
 }
 

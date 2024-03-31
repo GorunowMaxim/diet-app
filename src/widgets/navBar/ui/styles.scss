@@ -1,28 +1,23 @@
 .navbar {
-    width: 350px;
+    width: 280px;
     height: 100%;
-    background-color: #ecf7c6;
+    background-color: #143d17;
     border-radius: 20px;
+    color: white;
 
     &-wrapper {
         height: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: space-around;
         flex-direction: column;
     }
 
-    &-body {}
+    &-body {
+        width: 80%;
+    }
 
     &-navigation {
-
-
-        &__list {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
 
         &__item {
             margin: 20px 0;
@@ -31,25 +26,73 @@
         &__link {
             display: flex;
             align-items: center;
-            justify-content: center;
-            border-radius: 26px;
-            width: 260px;
-            height: 46px;
-            background-color: #4a95008f;
-            color: black;
+            justify-content: left;
+            width: 100%;
+            height: 40px;
+            font-size: 14px;
+            color: rgb(255, 255, 255);
+            border-radius: 12px;
             font-weight: 600;
+            transition: 0.3s ease;
+            border-right: 2px solid transparent;
+            background-color: rgba(255, 255, 255, 0);
+
+            &_active {
+                background-color: rgba(255, 255, 255, 0.603);
+                transition: 0.3s ease;
+            }
+
+            &_hide {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    &-icon {
+        width: 18px;
+        margin: 0 20px;
+    }
+}
+
+.navbar-header {
+
+    &__user {
+        &-photo {
+            width: 150px;
+            height: 150px;
+            background-color: grey;
+            border-radius: 50%;
+        }
+
+        &-name {
+            text-align: center;
+            font-weight: 600;
+            margin: 20px 0px 0px 0px;
         }
     }
 }
 
-.navbar-header {}
 
-.navbar-body {}
+.navbar-footer {
+    width: 80%;
 
-.dashboard-navigation {}
+    &__logout {
 
-.dashboard-nvigation__list {}
+        display: flex;
+        align-items: center;
+        justify-content: left;
+    }
 
-.dashboard-navigation__item {}
+    &__button {
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 16px;
+        transition: 0.3s ease;
+        background-color: transparent;
+        color: white;
+    }
+}
 
-.dashboard-navigation__link {}

@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import NavBar from '@/widgets/navBar/ui/NavBar';
 
 import './styles.scss';
+import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,13 +15,14 @@ export const metadata: Metadata = {
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<div className='dashboard-flex-box'>
+		<>
+			<Toaster />
 			<div className='dashboard'>
 				<div className='dashboard-wrapper'>
 					<NavBar />
 					<main className='dashboard-main'>{children}</main>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 }

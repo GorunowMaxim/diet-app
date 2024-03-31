@@ -9,14 +9,12 @@ export function middleware(request: NextRequest) {
 	const token = request.cookies.get('token')?.value || '';
 
 	if (isPublicPath && token) {
-		return NextResponse.redirect(new URL('/', request.nextUrl));
+		return NextResponse.redirect(new URL('/dashboard/daily-plan', request.nextUrl));
 	}
 
 	if (!isPublicPath && !token) {
 		return NextResponse.redirect(new URL('/sign-in', request.nextUrl));
 	}
-
-	return NextResponse.next();
 }
 
 export const config = {

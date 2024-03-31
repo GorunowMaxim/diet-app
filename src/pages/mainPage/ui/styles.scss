@@ -6,8 +6,8 @@
     gap: 25px;
 
     &-wrapper {
-        max-width: 1920px;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         padding: 0 10px;
         display: flex;
         align-items: center;
