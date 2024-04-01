@@ -1,6 +1,6 @@
 import SignInPage from "@/pages/authPages/signIn/SignInPage";
 
-const SignIn= () => {
+const SignIn = () => {
 	return <SignInPage />
 };
 

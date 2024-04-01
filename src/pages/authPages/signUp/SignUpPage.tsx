@@ -1,5 +1,5 @@
 import AuthPageWrapper from '../AuthPageWrapper';
-import SignUpForm from '@/widgets/userForm/signUpForm/ui/SignUpForm';
+import SignUpForm from '@/widgets/authForm/signUpForm/ui/SignUpForm';
 
 import '../styles.scss';
 

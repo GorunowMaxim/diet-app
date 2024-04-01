@@ -1,0 +1,27 @@
+.user-data {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    &__photo {
+        width: 175px;
+        height: 175px;
+        background-color: gray;
+        border-radius: 40%;
+    }
+
+    &__data {
+        &-block {}
+
+        &-text {
+            font-size: 16px;
+            display: block;
+            line-height: 180%;
+
+            &_bold {
+                font-weight: 600;
+            }
+        }
+    }
+
+}

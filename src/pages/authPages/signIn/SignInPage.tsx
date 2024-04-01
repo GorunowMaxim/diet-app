@@ -1,4 +1,4 @@
-import SignInForm from '@/widgets/userForm/signInForm/ui/SignInForm';
+import SignInForm from '@/widgets/authForm/signInForm/ui/SignInForm';
 import AuthPageWrapper from '../AuthPageWrapper';
 
 import '../styles.scss';
