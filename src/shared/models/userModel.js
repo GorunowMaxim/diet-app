@@ -14,6 +14,24 @@ const userSchema = new mongoose.Schema({
 		type: String,
 		required: [true, 'Please provide a password'],
 	},
+	extendData: {
+		firstName: {
+			type: String,
+			default: '',
+		},
+		lastName: {
+			type: String,
+			default: '',
+		},
+		age: Number,
+		dateOfBirth: {
+			type: Date,
+		},
+		country: {
+			type: String,
+			default: '',
+		},
+	},
 });
 
 const User = mongoose.models.users || mongoose.model('users', userSchema);

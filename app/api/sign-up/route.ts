@@ -8,13 +8,12 @@ connectDB();
 export async function POST(req: Request) {
 	try {
 		const reqBody = await req.json();
+		console.log(reqBody)
 
 		const { userName, email, password } = reqBody;
 
 		const user = await User.findOne({ email });
 		const existUserName = await User.findOne({ userName });
-
-		console.log(user, existUserName);
 
 		if (existUserName) {
 			return NextResponse.json({ error: 'User with this username already exists' }, {status: 400});
@@ -31,6 +30,11 @@ export async function POST(req: Request) {
 			userName,
 			email,
 			password: hashPassword,
+			extendData: {
+				firstName: '',
+				lastName: '',
+				country: '',
+			}
 		});
 		const savedUser = await newUser.save();
 

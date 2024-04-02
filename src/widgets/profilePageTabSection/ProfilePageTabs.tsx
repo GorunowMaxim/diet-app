@@ -1,11 +1,9 @@
 'use client';
 
-
-
-
 import TabContainer from '@/shared/ui/tabs/tabContainer/TabContainer';
 import Tab from '@/shared/ui/tabs/tab/Tab';
 import { useState } from 'react';
+import UpdateUserProfileData from '@/features/updateUserData/ui/UpdateUserProfileData';
 
 interface TabsConfig {
 	[index: string]: {
@@ -28,10 +26,9 @@ const tabsConfig: TabsConfig = {
 const ProfilePageTabs = () => {
 	const [tabId, setTabId] = useState<string>('1');
 
-	const handleClickTab = (e: any) => {
-		setTabId(e.target.id);
+	const handleClickTab = (e: React.MouseEvent<HTMLElement>) => {
+		setTabId(e.currentTarget.id);
 	};
-
 
 	return (
 		<>
@@ -59,7 +56,7 @@ const ProfilePageTabs = () => {
 					activeTab={tabId}
 					id='1'
 				>
-					<h1>hello 1</h1>
+					<UpdateUserProfileData />
 				</TabContainer>
 				<TabContainer
 					className='profile-body__tabs-block'
