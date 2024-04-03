@@ -1,20 +1,27 @@
+import { ProfileUserDataProps } from '@/shared/types/types';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchUserData = createAsyncThunk('user/fetchUserData', async () => {
 	try {
 		const response = await axios.get('/api/user');
-		return response.data;
+		return response.data.data;
 	} catch (error: any) {
 		throw new Error(error);
 	}
 });
 
-const initialState: any = {}
+interface InitialState {
+	userData: ProfileUserDataProps | null;
+}
+
+const initialState: InitialState = {
+	userData: null,
+};
 
 export const userSlice = createSlice({
 	name: 'user',
-    initialState,
+	initialState,
 	reducers: {},
 	extraReducers: (builder) => {
 		builder.addCase(fetchUserData.fulfilled, (state, action) => {
@@ -23,4 +30,4 @@ export const userSlice = createSlice({
 	},
 });
 
-export default userSlice.reducer
+export default userSlice.reducer;

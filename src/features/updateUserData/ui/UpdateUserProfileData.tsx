@@ -54,7 +54,7 @@ const UpdateUserProfileData = () => {
 					<p className='profile-form__label-headline'>Username</p>
 					<Input
 						className='input profile-form__input'
-						defaultValue={userData !== undefined ? userData.data.userName : ''}
+						defaultValue={userData !== undefined ? userData?.userName : ''}
 						type='text'
 						{...register('userName', {
 							// required: 'Email field is required',
@@ -71,7 +71,7 @@ const UpdateUserProfileData = () => {
 					<p className='profile-form__label-headline'>Email address</p>
 					<Input
 						className='input profile-form__input'
-						defaultValue={userData !== undefined ? userData.data.email : ''}
+						defaultValue={userData !== undefined ? userData?.email : ''}
 						type='email'
 						{...register('email', {
 							// required: 'Email field is required',
