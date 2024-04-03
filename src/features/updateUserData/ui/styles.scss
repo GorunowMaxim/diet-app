@@ -9,6 +9,12 @@
         width: auto;
         margin: 0 auto;
 
+        &-textarea {
+            width: 82%;
+            grid-column: 1 / span 2;
+            margin: 0 auto;
+        }
+
 
         &-headline {
             width: auto;
@@ -29,6 +35,16 @@
 
     &__button {
         width: 120px;
+    }
+
+    &__textarea {
+        width: 100%;
+        height: 130px;
+        border: 1px solid #333;
+        border-radius: 8px;
+        margin: 10px 0px 0px 0px;
+        padding: 10px;
+        resize: none;
     }
 
 }
