@@ -27,7 +27,7 @@ const SignInUser = () => {
 			const response = await axios.post('/api/sign-in', data);
 			console.log('sign in ok', response.status);
 			setLoading(false);
-			router.push('/');
+			router.push('/dashboard/daily-plan');
 		} catch (e: any) {
 			console.log('error', e);
 			toast.error(e.response.data.error);
