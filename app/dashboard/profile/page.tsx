@@ -1,4 +1,4 @@
-import ProfilePage from "@/pages/dashboardPages/profilePage/ProfilePage";
+import ProfilePage from "@/subPages/dashboardPages/profilePage/ProfilePage";
 
 
 const Profile = () => {
