@@ -19,14 +19,14 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='en'>
-			<body className={inter.className}>
-				<StoreProvider>
+		<StoreProvider>
+			<html lang='en'>
+				<body className={inter.className}>
 					<ProgressBarProviders>
 						<div className='wrapper'>{children}</div>
 					</ProgressBarProviders>
-				</StoreProvider>
-			</body>
-		</html>
+				</body>
+			</html>
+		</StoreProvider>
 	);
 }
