@@ -1,7 +1,5 @@
-import AuthPageWrapper from '../AuthPageWrapper';
+import AuthPageWrapper from '../../AuthPageWrapper';
 import SignUpForm from '@/widgets/authForm/signUpForm/ui/SignUpForm';
-
-import '../styles.scss';
 
 const SignUnPage = () => {
 	return (

@@ -1,7 +1,5 @@
 import SignInForm from '@/widgets/authForm/signInForm/ui/SignInForm';
-import AuthPageWrapper from '../AuthPageWrapper';
-
-import '../styles.scss';
+import AuthPageWrapper from '../../AuthPageWrapper';
 
 const SignInPage = () => {
 	return (

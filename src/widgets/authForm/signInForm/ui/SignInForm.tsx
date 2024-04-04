@@ -1,5 +1,5 @@
 import AuthContainer from '@/entities/authContainer/ui/AuthContainer';
-import SignInUser from '@/features/signIn/ui/SignInUser';
+import SignInUser from '@/features/auth/signIn/ui/SignInUser';
 
 const SignInForm = () => {
 	return (

@@ -1,7 +1,7 @@
-import SignInPage from "@/subPages/authPages/signIn/SignInPage";
+import SignInPage from '@/subPages/authPages/signIn/ui/SignInPage';
 
 const SignIn = () => {
-	return <SignInPage />
+	return <SignInPage />;
 };
 
 export default SignIn;

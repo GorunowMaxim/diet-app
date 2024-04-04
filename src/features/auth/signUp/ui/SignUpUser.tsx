@@ -1,16 +1,18 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import axios from 'axios';
-
-import type { Inputs } from '@/shared/types/types';
+import { useState } from 'react';
 
 import Form from '@/shared/ui/form/Form';
 import Input from '@/shared/ui/input/Input';
 import Label from '@/shared/ui/label/Label';
+
+import type { Inputs } from '@/shared/types/types';
+
+import '../../styles.scss';
 
 interface FormConfig {
 	[index: string]: {
@@ -71,14 +73,14 @@ const SignUpUser = () => {
 		}
 	};
 	return (
-		<Form onSubmit={handleSubmit(onSignUp)} className='signin-card__form'>
+		<Form onSubmit={handleSubmit(onSignUp)} className='auth-card__form'>
 			{Object.keys(formConfig).map((el, index) => {
 				const config = formConfig[el];
 				return (
-					<Label key={index} className='signin-card__label'>
-						<p className='signin-card__label-headline'>{config.headline}</p>
+					<Label key={index} className='auth-card__label'>
+						<p className='auth-card__label-headline'>{config.headline}</p>
 						<Input
-							className='signin-card__input'
+							className='auth-card__input'
 							type={
 								config.registerName !== 'password' && config.registerName !== 'email'
 									? 'text'
@@ -98,7 +100,7 @@ const SignUpUser = () => {
 					</Label>
 				);
 			})}
-			<button type='submit' className='signin-card__button' disabled={!isValid || isLoading}>
+			<button type='submit' className='auth-card__button' disabled={!isValid || isLoading}>
 				{isLoading ? <img className='spinner' src='/images/spinner.svg' /> : 'Sign up'}
 			</button>
 		</Form>

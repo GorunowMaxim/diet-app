@@ -1,4 +1,4 @@
-import SignUnPage from '@/subPages/authPages/signUp/SignUpPage';
+import SignUnPage from '@/subPages/authPages/signUp/ui/SignUpPage';
 
 const SignUp = () => {
 	return <SignUnPage />;

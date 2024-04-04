@@ -84,7 +84,6 @@ const UpdateUserProfileData = () => {
 	} = useForm<Inputs>({ mode: 'onBlur' });
 
 	const onRefresh: SubmitHandler<Inputs> = async (data) => {
-		console.log(data);
 		try {
 			setLoading(true);
 			const response = await axios.patch('/api/dashboard/profile', data);

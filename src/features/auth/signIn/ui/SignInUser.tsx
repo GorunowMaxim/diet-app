@@ -12,6 +12,8 @@ import Label from '@/shared/ui/label/Label';
 
 import type { Inputs } from '@/shared/types/types';
 
+import'../../styles.scss'
+
 const SignInUser = () => {
 	const [isLoading, setLoading] = useState<boolean>(false);
 	const router = useRouter();
@@ -38,11 +40,11 @@ const SignInUser = () => {
 	};
 
 	return (
-		<Form onSubmit={handleSubmit(onSignIn)} className='signin-card__form'>
-			<Label className='signin-card__label'>
-				<p className='signin-card__label-headline'>Email address</p>
+		<Form onSubmit={handleSubmit(onSignIn)} className='auth-card__form'>
+			<Label className='auth-card__label'>
+				<p className='auth-card__label-headline'>Email address</p>
 				<Input
-					className='signin-card__input'
+					className='auth-card__input'
 					type='email'
 					{...register('email', {
 						required: 'Email field is required',
@@ -54,10 +56,10 @@ const SignInUser = () => {
 				/>
 				{errors.email && <p className='error-message'>{errors.email.message}</p>}
 			</Label>
-			<Label className='signin-card__label'>
-				<p className='signin-card__label-headline'>Password</p>
+			<Label className='auth-card__label'>
+				<p className='auth-card__label-headline'>Password</p>
 				<Input
-					className='signin-card__input'
+					className='auth-card__input'
 					type='password'
 					{...register('password', {
 						required: 'Password field is required',
@@ -69,7 +71,7 @@ const SignInUser = () => {
 				/>
 				{errors.password && <p className='error-message'>{errors.password.message}</p>}
 			</Label>
-			<button type='submit' className='signin-card__button' disabled={!isValid || isLoading}>
+			<button type='submit' className='auth-card__button' disabled={!isValid || isLoading}>
 				{isLoading ? <img className='spinner' src='/images/spinner.svg' /> : 'Sign in'}
 			</button>
 		</Form>
