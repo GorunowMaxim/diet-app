@@ -1,0 +1,13 @@
+.daily-plan {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+
+    &__wrapper {
+        width: 100%;
+        height: 100%;
+        display: grid;
+        gap: 25px;
+        grid: repeat(2, 1fr) / repeat(3, 1fr);
+    }
+}

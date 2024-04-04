@@ -1,5 +1,7 @@
-const Dash = () => {
-    return ( <h1>Hello</h1> );
-}
- 
-export default Dash;
+import DailyPlanPage from '@/subPages/dashboardPages/dailyPlanPage/ui/DailyPlanPage';
+
+const DailyPlan = () => {
+	return <DailyPlanPage />;
+};
+
+export default DailyPlan;

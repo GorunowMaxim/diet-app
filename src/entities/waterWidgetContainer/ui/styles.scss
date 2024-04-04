@@ -1,0 +1,68 @@
+.water-widget {
+    background-color: #f3f6fe;
+    border: 1px solid #a5a5a5;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    &__circle-wrapper {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        border-radius: 50%;
+        overflow: hidden;
+        background-color: #1e384c;
+    }
+
+    &__circle {
+        position: absolute;
+        left: -50%;
+        bottom: 0%;
+        width: 400px;
+        height: 400px;
+        border-radius: 42%;
+        background-color: #267bbca9;
+        animation: circleMove 10s reverse infinite;
+        transition: 0.3s ease;
+
+        &_front {
+            background-color: #3bb8ed;
+            animation: circleMove 10s linear infinite;
+            z-index: 0;
+            transition: 0.3s ease;
+        }
+
+    }
+
+    &__count {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        color: white;
+        font-size: 24px;
+    }
+}
+
+
+@keyframes circleMove {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

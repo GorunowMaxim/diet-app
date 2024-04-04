@@ -1,0 +1,22 @@
+.update {
+    &-btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 25px;
+    }
+
+    &-btn {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1e384c;
+        color: white;
+        font-size: 24px;
+        font-weight: 300;
+        border-radius: 50%;
+        line-height: 0%;
+    }
+}
