@@ -11,3 +11,9 @@
         grid: repeat(2, 1fr) / repeat(3, 1fr);
     }
 }
+
+.motion {
+    &-calories {
+        grid-column: span 2;
+    }
+}

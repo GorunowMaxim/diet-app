@@ -1,0 +1,62 @@
+.nutritions-block {
+    width: 100%;
+    height: 100%;
+
+    &__wrapper {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    &__progressbar-name {}
+
+    &__change-value {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__value {}
+
+    &__input {
+        width: 50px;
+        height: 34px;
+        border-radius: 6px;
+        border: 1px solid black;
+        text-align: center;
+
+        &::-webkit-inner-spin-button {
+            display: none;
+        }
+    }
+
+    &__button {
+        background-color: transparent;
+
+    }
+
+    &__icon {
+        width: 16px;
+    }
+
+    &__progressbar {
+        height: 10px;
+        width: 400px;
+        border-radius: 5px;
+    }
+}
+
+.nutritions-block {}
+
+.nutritions-block__wrapper {}
+
+.nutritions-block {}
+
+.nutritions-block {}
+
+.nutritions-block__ {}
+
+.nutritions-block__button {}
+
+.nutritions-block__progressbar {}
