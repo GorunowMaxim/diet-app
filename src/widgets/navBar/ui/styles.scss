@@ -1,8 +1,7 @@
 .navbar {
-    width: 280px;
+    width: 110px;
     height: 100%;
-    border-radius: 20px;
-    color: black;
+    background-color: #FFFCF8;
 
     &-wrapper {
         height: 100%;
@@ -13,31 +12,32 @@
     }
 
     &-body {
-        width: 80%;
+        width: 100%;
     }
 
     &-navigation {
 
         &__item {
+            width: 100%;
+            display: flex;
+            justify-content: center;
             margin: 20px 0;
         }
 
         &__link {
             display: flex;
             align-items: center;
-            justify-content: left;
-            width: 100%;
-            height: 40px;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
             font-size: 14px;
-            color: black;
             border-radius: 12px;
-            font-weight: 600;
             transition: 0.3s ease;
             border-right: 2px solid transparent;
             background-color: rgba(0, 0, 0, 0);
 
             &_active {
-                background-color: rgba(27, 27, 27, 0.603);
+                background-color: #303030;
                 transition: 0.3s ease;
             }
 
@@ -48,7 +48,8 @@
     }
 
     &-icon {
-        width: 18px;
+        width: 30px;
+        height: 30px;
         margin: 0 20px;
     }
 }

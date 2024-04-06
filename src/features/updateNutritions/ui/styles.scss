@@ -6,18 +6,21 @@
         height: 100%;
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: flex-end;
+        margin: 0px 10% 0px 0px;
+        gap: 40px;
+        font-weight: 600;
     }
 
-    &__progressbar-name {}
+    &__progressbar-name {
+        font-weight: 600;
+    }
 
     &__change-value {
         display: flex;
         align-items: center;
         gap: 10px;
     }
-
-    &__value {}
 
     &__input {
         width: 50px;
@@ -41,22 +44,13 @@
     }
 
     &__progressbar {
-        height: 10px;
+        height: 15px;
+        background-color: #b3b3b3;
         width: 400px;
-        border-radius: 5px;
+        border-radius: 8px;
     }
 }
 
-.nutritions-block {}
-
-.nutritions-block__wrapper {}
-
-.nutritions-block {}
-
-.nutritions-block {}
-
-.nutritions-block__ {}
-
-.nutritions-block__button {}
-
-.nutritions-block__progressbar {}
+.MuiLinearProgress-bar {
+    background-color: #359cebe7;
+}

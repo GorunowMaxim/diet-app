@@ -2,7 +2,7 @@
     width: 80vw;
     height: 880px;
     border-radius: 20px;
-    background-color: #f3f6fe;
+    background-color: #FFFCF8;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -15,17 +15,14 @@
         height: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         gap: 20px;
     }
 
     &-main {
-        flex-grow: 1;
-        width: 100%;
+        width: 90%;
         height: 90%;
-        background-color: #e0f0ec;
-        align-self: flex-end;
-        border-top-left-radius: 12px;
+        align-self: center;
     }
 }
 

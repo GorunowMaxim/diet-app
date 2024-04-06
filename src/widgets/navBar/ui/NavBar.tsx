@@ -9,7 +9,6 @@ import './styles.scss';
 
 interface NavBarConfig {
 	[index: string]: {
-		name: string;
 		href: string;
 		imgHref: string;
 	};
@@ -17,17 +16,14 @@ interface NavBarConfig {
 
 const navBarConfig: NavBarConfig = {
 	plan: {
-		name: 'Daily plan',
 		href: '/dashboard/daily-plan',
-		imgHref: '/images/plan.svg',
+		imgHref: '/images/dashboard.svg',
 	},
 	calculator: {
-		name: 'Calculator',
 		href: '/dashboard/calculator',
 		imgHref: '/images/calculator.svg',
 	},
 	profile: {
-		name: 'Profile',
 		href: '/dashboard/profile',
 		imgHref: '/images/user.svg',
 	},
@@ -52,10 +48,7 @@ const NavBar = () => {
 		<aside className='navbar'>
 			<div className='navbar-wrapper'>
 				<div className='navbar-header'>
-					<div className='navbar-header__user'>
-						<div className='navbar-header__user-photo'></div>
-						<div className='navbar-header__user-name'>userName</div>
-					</div>
+					<img className='logo' src='/images/logo.svg' alt='' />
 				</div>
 				<div className='navbar-body'>
 					<nav className='navbar-navigation'>
@@ -73,7 +66,6 @@ const NavBar = () => {
 											href={link.href}
 										>
 											<img className='navbar-icon' src={link.imgHref} alt={el} />
-											{link.name}
 										</Link>
 									</li>
 								);
@@ -85,7 +77,6 @@ const NavBar = () => {
 					<div className='navbar-footer__logout'>
 						<button className='navbar-footer__button' onClick={logOut}>
 							<img className='navbar-icon' src='/images/logout.svg' alt='logout' />
-							Log out
 						</button>
 					</div>
 				</div>

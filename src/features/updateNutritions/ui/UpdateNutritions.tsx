@@ -1,20 +1,21 @@
 import { LinearProgress } from '@mui/material';
 import { ChangeEvent, useState } from 'react';
+
 import './styles.scss';
 
 const UpdateNutritions = ({ name }: { name: string }) => {
 	const [nutritionValue, setNutritionValue] = useState<number>(0);
-	const [currentNutritionValue, setCurrentNutritionValue] = useState<number>(0);
+	const [currentInputValue, setCurrentInputValue] = useState<number>(0);
 	const [maxNutritionValue, setmaxNutritionValue] = useState<number>(100);
-	const [isChanging, setChange] = useState(true);
+	const [isChanging, setChange] = useState(false);
 
 	const handleChangeValue = () => {
 		setChange(!isChanging);
-		if (isChanging) setNutritionValue((prev) => prev + currentNutritionValue);
+		if (isChanging) setNutritionValue((prev) =>  prev + currentInputValue);
 	};
 
 	const inputChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
-		setCurrentNutritionValue(Number(e.target.value));
+		setCurrentInputValue(Number(e.target.value));
 	};
 
 	return (
@@ -34,6 +35,7 @@ const UpdateNutritions = ({ name }: { name: string }) => {
 					</button>
 				</div>
 				<LinearProgress
+					color='info'
 					className='nutritions-block__progressbar'
 					variant='determinate'
 					value={nutritionValue}
