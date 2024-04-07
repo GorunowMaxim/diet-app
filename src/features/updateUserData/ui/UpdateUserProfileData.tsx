@@ -130,11 +130,7 @@ const UpdateUserProfileData = () => {
 					<textarea className='profile-form__textarea' {...register('about')} cols={30} rows={10}></textarea>
 				</Label>
 				<div className='profile-form__button-wrapper'>
-					<button
-						type='submit'
-						className='submit-button profile-form__button'
-						disabled={isLoading || !isValid}
-					>
+					<button type='submit' className='profile-form__button' disabled={isLoading || !isValid}>
 						{isLoading ? <img className='spinner' src='/images/spinner.svg' /> : 'Save'}
 					</button>
 				</div>

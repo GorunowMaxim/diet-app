@@ -1,12 +1,10 @@
-import AuthContainer from '@/entities/authContainer/ui/AuthContainer';
-import SignUpUser from '@/features/auth/signUp/ui/SignUpUser';
+import { AuthContainer } from '@/entities/authContainer';
+import { SignUpUser } from '@/features/auth';
 
-const SignUpForm = () => {
+export const SignUpForm = () => {
 	return (
 		<AuthContainer variant='sign-up'>
 			<SignUpUser />
 		</AuthContainer>
 	);
 };
-
-export default SignUpForm;

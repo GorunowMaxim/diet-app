@@ -1,7 +1,8 @@
 .navbar {
-    width: 110px;
+    width: 130px;
     height: 100%;
     background-color: #FFFCF8;
+    border-radius: 12px;
 
     &-wrapper {
         height: 100%;
@@ -48,13 +49,18 @@
     }
 
     &-icon {
-        width: 30px;
-        height: 30px;
+        width: 24px;
+        height: 24px;
         margin: 0 20px;
     }
 }
 
 .navbar-header {
+
+    &__logo {
+        width: 100px;
+        height: 100px;
+    }
 
     &__user {
         &-photo {
@@ -80,7 +86,7 @@
 
         display: flex;
         align-items: center;
-        justify-content: left;
+        justify-content: center;
     }
 
     &__button {

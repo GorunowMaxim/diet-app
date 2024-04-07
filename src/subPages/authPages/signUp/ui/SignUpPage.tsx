@@ -1,7 +1,7 @@
+import { SignUpForm } from '@/widgets/authForm';
 import AuthPageWrapper from '../../AuthPageWrapper';
-import SignUpForm from '@/widgets/authForm/signUpForm/ui/SignUpForm';
 
-const SignUnPage = () => {
+export const SignUnPage = () => {
 	return (
 		<AuthPageWrapper>
 			<SignUpForm />
@@ -9,4 +9,3 @@ const SignUnPage = () => {
 	);
 };
 
-export default SignUnPage;

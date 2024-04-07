@@ -48,7 +48,7 @@ const formConfig: FormConfig = {
 	},
 };
 
-const SignUpUser = () => {
+export const SignUpUser = () => {
 	const [isLoading, setLoading] = useState<boolean>(false);
 	const router = useRouter();
 	const {
@@ -106,5 +106,3 @@ const SignUpUser = () => {
 		</Form>
 	);
 };
-
-export default SignUpUser;

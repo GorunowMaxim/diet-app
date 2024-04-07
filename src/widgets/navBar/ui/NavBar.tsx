@@ -11,6 +11,7 @@ interface NavBarConfig {
 	[index: string]: {
 		href: string;
 		imgHref: string;
+		imgHrefActive: string;
 	};
 }
 
@@ -18,37 +19,28 @@ const navBarConfig: NavBarConfig = {
 	plan: {
 		href: '/dashboard/daily-plan',
 		imgHref: '/images/dashboard.svg',
+		imgHrefActive: '/images/dashboard-active.svg',
 	},
 	calculator: {
 		href: '/dashboard/calculator',
 		imgHref: '/images/calculator.svg',
+		imgHrefActive: '/images/calculator-active.svg',
 	},
 	profile: {
 		href: '/dashboard/profile',
 		imgHref: '/images/user.svg',
+		imgHrefActive: '/images/user-active.svg',
 	},
 };
 
 const NavBar = () => {
 	const pathname = usePathname();
-	const router = useRouter();
-
-	const logOut = async () => {
-		try {
-			const response = await axios.get('/api/logout');
-			console.log('sign in ok', response.status);
-			router.push('/sign-in');
-		} catch (e: any) {
-			console.log('error', e);
-			toast.error(e.message);
-		}
-	};
 
 	return (
 		<aside className='navbar'>
 			<div className='navbar-wrapper'>
 				<div className='navbar-header'>
-					<img className='logo' src='/images/logo.svg' alt='' />
+					<img className='navbar-header__logo' src='/images/logo.svg' alt='' />
 				</div>
 				<div className='navbar-body'>
 					<nav className='navbar-navigation'>
@@ -65,7 +57,11 @@ const NavBar = () => {
 											}
 											href={link.href}
 										>
-											<img className='navbar-icon' src={link.imgHref} alt={el} />
+											{pathname === link.href ? (
+												<img className='navbar-icon' src={link.imgHrefActive} alt={el} />
+											) : (
+												<img className='navbar-icon' src={link.imgHref} alt={el} />
+											)}
 										</Link>
 									</li>
 								);
@@ -73,13 +69,7 @@ const NavBar = () => {
 						</ul>
 					</nav>
 				</div>
-				<div className='navbar-footer'>
-					<div className='navbar-footer__logout'>
-						<button className='navbar-footer__button' onClick={logOut}>
-							<img className='navbar-icon' src='/images/logout.svg' alt='logout' />
-						</button>
-					</div>
-				</div>
+
 			</div>
 		</aside>
 	);

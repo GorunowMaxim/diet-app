@@ -9,6 +9,17 @@
     background-color: #e8f7f3;
     border: 1px solid rgb(0, 0, 0);
 
+    &__logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-image {
+            width: 150px;
+            margin: 0px 0px 20px 0px;
+        }
+    }
+
     &__headline {
         text-align: center;
         margin: 0px 0px 20px 0px;
@@ -69,15 +80,4 @@
         margin: 0px 0px 0px 10px;
     }
 
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    &-image {
-        width: 150px;
-        margin: 0px 0px 20px 0px;
-    }
 }

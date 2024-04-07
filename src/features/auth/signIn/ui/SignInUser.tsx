@@ -14,7 +14,7 @@ import type { Inputs } from '@/shared/types/types';
 
 import'../../styles.scss'
 
-const SignInUser = () => {
+export const SignInUser = () => {
 	const [isLoading, setLoading] = useState<boolean>(false);
 	const router = useRouter();
 	const {
@@ -77,5 +77,3 @@ const SignInUser = () => {
 		</Form>
 	);
 };
-
-export default SignInUser;

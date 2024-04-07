@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 
 import './styles.scss';
 
-const AuthContainer = ({ variant, children }: { variant: 'sign-in' | 'sign-up'; children: ReactNode }) => {
+export const AuthContainer = ({ variant, children }: { variant: 'sign-in' | 'sign-up'; children: ReactNode }) => {
 	return (
 		<>
 			<Toaster
@@ -55,4 +55,4 @@ const AuthContainer = ({ variant, children }: { variant: 'sign-in' | 'sign-up'; 
 	);
 };
 
-export default AuthContainer;
+

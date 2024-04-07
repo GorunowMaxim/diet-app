@@ -1,12 +1,10 @@
-import SignInForm from '@/widgets/authForm/signInForm/ui/SignInForm';
 import AuthPageWrapper from '../../AuthPageWrapper';
+import { SignInForm } from '@/widgets/authForm';
 
-const SignInPage = () => {
+export const SignInPage = () => {
 	return (
 		<AuthPageWrapper>
 			<SignInForm />
 		</AuthPageWrapper>
 	);
 };
-
-export default SignInPage;
