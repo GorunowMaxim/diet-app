@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-const Tab = ({
+export const Tab = ({
 	activeTab,
 	id,
 	children,
@@ -21,5 +21,3 @@ const Tab = ({
 		</button>
 	);
 };
-
-export default Tab;

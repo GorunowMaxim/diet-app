@@ -1,10 +1,11 @@
 'use client';
+
 import { motion } from 'framer-motion';
 
-import WaterWidget from '@/widgets/waterWidget/ui/WaterWidget';
+import { WaterWidget } from '@/widgets/waterWidget';
+import { CaloriesWidget } from '@/widgets/caloriesWidget';
 
 import './styles.scss';
-import CaloriesWidget from '@/widgets/caloriesWidget/ui/CaloriesWidget';
 
 const container = {
 	hidden: { opacity: 1, scale: 0 },
@@ -34,7 +35,7 @@ const itemHorizontal = {
 	},
 };
 
-const DailyPlanPage = () => {
+export const DailyPlanPage = () => {
 	return (
 		<div className='daily-plan'>
 			<motion.div variants={container} initial='hidden' animate='visible' className='daily-plan__wrapper'>
@@ -48,5 +49,3 @@ const DailyPlanPage = () => {
 		</div>
 	);
 };
-
-export default DailyPlanPage;

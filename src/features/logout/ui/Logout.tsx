@@ -1,10 +1,12 @@
+'use client';
+
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-const Logout = () => {
+export const Logout = () => {
 	const router = useRouter();
-    
+
 	const logOut = async () => {
 		try {
 			const response = await axios.get('/api/logout');
@@ -26,5 +28,3 @@ const Logout = () => {
 		</div>
 	);
 };
-
-export default Logout;

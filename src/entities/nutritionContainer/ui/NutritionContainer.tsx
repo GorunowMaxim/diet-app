@@ -1,7 +1,8 @@
 import { ReactNode } from 'react';
+
 import './styles.scss';
 
-const NutritionContainer = ({ children }: { children: ReactNode }) => {
+export const NutritionContainer = ({ children }: { children: ReactNode }) => {
 	return (
 		<div className='nutritions'>
 			<div className='nutritions-wrapper'>
@@ -11,5 +12,3 @@ const NutritionContainer = ({ children }: { children: ReactNode }) => {
 		</div>
 	);
 };
-
-export default NutritionContainer;

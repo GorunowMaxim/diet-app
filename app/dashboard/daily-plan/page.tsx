@@ -1,4 +1,4 @@
-import DailyPlanPage from '@/subPages/dashboardPages/dailyPlanPage/ui/DailyPlanPage';
+import { DailyPlanPage } from '@/subPages/dashboardPages';
 
 const DailyPlan = () => {
 	return <DailyPlanPage />;

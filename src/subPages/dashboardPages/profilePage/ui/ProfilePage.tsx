@@ -3,14 +3,14 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 
-import ProfileUserData from '@/entities/profileUserData/ui/ProfileUserData';
-import ProfilePageTabs from '@/widgets/profilePageTabSection/ProfilePageTabs';
+import { ProfileUserData } from '@/entities/profileUserData';
+import { ProfilePageTabs } from '@/widgets/profilePageTabSection';
 
 import type { ProfileUserDataProps } from '@/shared/types/types';
 
 import './styles.scss';
 
-const ProfilePage = () => {
+export const ProfilePage = () => {
 	const [data, setData] = useState<ProfileUserDataProps>();
 
 	useEffect(() => {
@@ -38,5 +38,3 @@ const ProfilePage = () => {
 		</section>
 	);
 };
-
-export default ProfilePage;

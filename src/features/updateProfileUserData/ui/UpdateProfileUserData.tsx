@@ -74,7 +74,7 @@ const userConfigInputs: UserDataConfig = {
 	},
 };
 
-const UpdateUserProfileData = () => {
+export const UpdateProfileUserData = () => {
 	const [isLoading, setLoading] = useState<boolean>(false);
 
 	const {
@@ -138,5 +138,3 @@ const UpdateUserProfileData = () => {
 		</div>
 	);
 };
-
-export default UpdateUserProfileData;

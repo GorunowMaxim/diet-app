@@ -1,9 +1,10 @@
 'use client';
 
-import TabContainer from '@/shared/ui/tabs/tabContainer/TabContainer';
-import Tab from '@/shared/ui/tabs/tab/Tab';
 import { useState } from 'react';
-import UpdateUserProfileData from '@/features/updateUserData/ui/UpdateUserProfileData';
+
+import { UpdateProfileUserData } from '@/features/updateProfileUserData';
+import { Tab, TabContainer } from '@/shared/ui/tabs';
+
 
 interface TabsConfig {
 	[index: string]: {
@@ -23,7 +24,7 @@ const tabsConfig: TabsConfig = {
 	},
 };
 
-const ProfilePageTabs = () => {
+export const ProfilePageTabs = () => {
 	const [tabId, setTabId] = useState<string>('1');
 
 	const handleClickTab = (e: React.MouseEvent<HTMLElement>) => {
@@ -56,7 +57,7 @@ const ProfilePageTabs = () => {
 					activeTab={tabId}
 					id='1'
 				>
-					<UpdateUserProfileData />
+					<UpdateProfileUserData />
 				</TabContainer>
 				<TabContainer
 					className='profile-body__tabs-block'
@@ -70,5 +71,3 @@ const ProfilePageTabs = () => {
 		</>
 	);
 };
-
-export default ProfilePageTabs;

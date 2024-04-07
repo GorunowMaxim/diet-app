@@ -1,7 +1,7 @@
-import NutritionContainer from '@/entities/nutritionContainer/ui/NutritionContainer';
-import UpdateNutritions from '@/features/updateNutritions/ui/UpdateNutritions';
+import { NutritionContainer } from '@/entities/nutritionContainer';
+import { UpdateNutritions } from '@/features/updateNutritions';
 
-const CaloriesWidget = () => {
+export const CaloriesWidget = () => {
 	return (
 		<NutritionContainer>
 			<UpdateNutritions name='Protein' />
@@ -10,5 +10,3 @@ const CaloriesWidget = () => {
 		</NutritionContainer>
 	);
 };
-
-export default CaloriesWidget;

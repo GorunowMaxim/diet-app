@@ -1,5 +1,4 @@
-import ProfilePage from "@/subPages/dashboardPages/profilePage/ui/ProfilePage";
-
+import { ProfilePage } from '@/subPages/dashboardPages';
 
 const Profile = () => {
 	return <ProfilePage />;

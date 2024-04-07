@@ -1,10 +1,10 @@
-import type { Metadata } from 'next';
+import { Toaster } from 'react-hot-toast';
 import { Inter } from 'next/font/google';
+import type { Metadata } from 'next';
 
-import NavBar from '@/widgets/navBar/ui/NavBar';
+import { SideBar } from '@/widgets/sideBar';
 
 import './styles.scss';
-import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,7 +19,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
 			<Toaster />
 			<div className='dashboard'>
 				<div className='dashboard-wrapper'>
-					<NavBar />
+					<SideBar />
 					<main className='dashboard-main'>{children}</main>
 				</div>
 			</div>

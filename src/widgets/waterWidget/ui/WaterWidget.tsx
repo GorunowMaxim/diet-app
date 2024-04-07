@@ -1,10 +1,11 @@
-'use client'
+'use client';
 
-import WaterWidgetContainer from '@/entities/waterWidgetContainer/ui/WaterWidgetContainer';
-import UpdateWaterWidget from '@/features/updateWaterWidget/ui/UpdateWaterWidget';
 import { useState } from 'react';
 
-const WaterWidget = () => {
+import { WaterWidgetContainer } from '@/entities/waterWidgetContainer';
+import { UpdateWaterWidget } from '@/features/updateWaterWidget';
+
+export const WaterWidget = () => {
 	const [waterLevel, setWaterLevel] = useState<number>(100);
 	const [count, setCount] = useState<number>(0);
 	const [maxCount, setMaxCount] = useState<number>(10);
@@ -24,5 +25,3 @@ const WaterWidget = () => {
 		</>
 	);
 };
-
-export default WaterWidget;

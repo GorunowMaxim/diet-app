@@ -1,10 +1,8 @@
-'use client';
-
-import Button from '@/shared/ui/button/Button';
-import './styles.scss';
 import Link from 'next/link';
 
-const MainPgeContainer = () => {
+import './styles.scss';
+
+export const MainPage = () => {
 	return (
 		<div className='main-wrapper'>
 			<main className='main'>
@@ -32,9 +30,3 @@ const MainPgeContainer = () => {
 		</div>
 	);
 };
-
-const MainPage = () => {
-	return <MainPgeContainer />;
-};
-
-export default MainPage;

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-const TabContainer = ({
+export const TabContainer = ({
 	activeTab,
 	id,
 	children,
@@ -15,5 +15,3 @@ const TabContainer = ({
 }) => {
 	return <div className={`${className} ${activeTab === id ? activeClassName : ''}`}>{children}</div>;
 };
-
-export default TabContainer;

@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Button from '@/shared/ui/button/Button';
 
@@ -12,7 +12,13 @@ interface UpdateWaterWidgetProps {
 	setCount: (num: number) => void;
 }
 
-const UpdateWaterWidget = ({ waterLevel, diffNumber, setWaterLevel, setCount, count }: UpdateWaterWidgetProps) => {
+export const UpdateWaterWidget = ({
+	waterLevel,
+	diffNumber,
+	setWaterLevel,
+	setCount,
+	count,
+}: UpdateWaterWidgetProps) => {
 	const incrementWaterLevel = () => {
 		if (waterLevel > 0) {
 			setWaterLevel(waterLevel - diffNumber);
@@ -23,7 +29,7 @@ const UpdateWaterWidget = ({ waterLevel, diffNumber, setWaterLevel, setCount, co
 	const decremetWaterLevel = () => {
 		if (waterLevel < 100) {
 			setWaterLevel(waterLevel + diffNumber);
-            setCount(count - 1);
+			setCount(count - 1);
 		}
 	};
 	return (
@@ -37,5 +43,3 @@ const UpdateWaterWidget = ({ waterLevel, diffNumber, setWaterLevel, setCount, co
 		</div>
 	);
 };
-
-export default UpdateWaterWidget;

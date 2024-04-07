@@ -3,7 +3,7 @@ import { ChangeEvent, useState } from 'react';
 
 import './styles.scss';
 
-const UpdateNutritions = ({ name }: { name: string }) => {
+export const UpdateNutritions = ({ name }: { name: string }) => {
 	const [nutritionValue, setNutritionValue] = useState<number>(0);
 	const [currentInputValue, setCurrentInputValue] = useState<number>(0);
 	const [maxNutritionValue, setmaxNutritionValue] = useState<number>(100);
@@ -11,7 +11,7 @@ const UpdateNutritions = ({ name }: { name: string }) => {
 
 	const handleChangeValue = () => {
 		setChange(!isChanging);
-		if (isChanging) setNutritionValue((prev) =>  prev + currentInputValue);
+		if (isChanging) setNutritionValue((prev) => prev + currentInputValue);
 	};
 
 	const inputChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
@@ -47,5 +47,3 @@ const UpdateNutritions = ({ name }: { name: string }) => {
 		</div>
 	);
 };
-
-export default UpdateNutritions;

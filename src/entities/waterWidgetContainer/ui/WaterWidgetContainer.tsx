@@ -11,7 +11,7 @@ interface WaterWidgetContainerProps {
 	waterLevel: number;
 }
 
-const WaterWidgetContainer = ({ children, count, maxCount, waterLevel }: WaterWidgetContainerProps) => {
+export const WaterWidgetContainer = ({ children, count, maxCount, waterLevel }: WaterWidgetContainerProps) => {
 	return (
 		<div className='water-widget'>
 			<div className='water-widget__wrapper'>
@@ -33,4 +33,3 @@ const WaterWidgetContainer = ({ children, count, maxCount, waterLevel }: WaterWi
 	);
 };
 
-export default WaterWidgetContainer;

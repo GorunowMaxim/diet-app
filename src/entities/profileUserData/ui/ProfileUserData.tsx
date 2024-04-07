@@ -2,7 +2,7 @@ import { ProfileUserDataProps } from '@/shared/types/types';
 
 import './styles.scss';
 
-const ProfileUserData = ({ userName, email, extendData }: ProfileUserDataProps) => {
+export const ProfileUserData = ({ userName, email, extendData }: ProfileUserDataProps) => {
 	return (
 		<div className='user-data'>
 			<div className='user-data__photo'></div>
@@ -26,4 +26,3 @@ const ProfileUserData = ({ userName, email, extendData }: ProfileUserDataProps) 
 	);
 };
 
-export default ProfileUserData;
