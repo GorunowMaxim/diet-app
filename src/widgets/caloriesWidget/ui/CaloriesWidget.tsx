@@ -6,7 +6,6 @@ export const CaloriesWidget = () => {
 	return (
 		<CaloriesWidgetContainer>
 			<UpdateCalories />
-			<UpdateCalories />
 		</CaloriesWidgetContainer>
 	);
 };

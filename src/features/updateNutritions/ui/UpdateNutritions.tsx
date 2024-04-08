@@ -38,8 +38,8 @@ export const UpdateNutritions = ({ name }: { name: string }) => {
 			<UpdateInputValue
 				isChanging={isChanging}
 				inputChangeValue={inputChangeValue}
-				nutritionValue={nutritionValue}
-				maxNutritionValue={maxNutritionValue}
+				currentValue={nutritionValue}
+				maxValue={maxNutritionValue}
 				handleChangeValue={handleChangeValue}
 			/>
 			<LinearProgress

@@ -7,16 +7,16 @@ import './styles.scss';
 interface UpdateNutritionsInputProps {
 	isChanging: boolean;
 	inputChangeValue: (e: ChangeEvent<HTMLInputElement>) => void;
-	nutritionValue: number;
-	maxNutritionValue: number;
+	currentValue: number;
+	maxValue: number;
 	handleChangeValue: () => void;
 }
 
 export const UpdateInputValue = ({
 	isChanging,
 	inputChangeValue,
-	nutritionValue,
-	maxNutritionValue,
+	currentValue,
+	maxValue,
 	handleChangeValue,
 }: UpdateNutritionsInputProps) => {
 	return (
@@ -25,7 +25,7 @@ export const UpdateInputValue = ({
 				<input onChange={inputChangeValue} type='number' className='value-block__input' />
 			) : (
 				<div className='value-block__value'>
-					{nutritionValue}/{maxNutritionValue}
+					{currentValue}/{maxValue}
 				</div>
 			)}
 			<button onClick={handleChangeValue} className='value-block__button'>
