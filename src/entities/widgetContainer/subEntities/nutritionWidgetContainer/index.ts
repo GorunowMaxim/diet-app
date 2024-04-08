@@ -1,1 +1,1 @@
-export { NutritionContainer } from './ui/NutritionContainer';
+export { NutritionWidgetContainer } from './ui/NutritionWidgetContainer';
