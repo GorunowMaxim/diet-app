@@ -1,30 +1,43 @@
 .water-widget {
-    background-color: #ffffff;
-    border-radius: 20px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100%;
-
-    &__wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 25px;
-    }
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
 
     &__circle-wrapper {
         position: relative;
-        width: 200px;
-        height: 200px;
-        border: 1px solid black;
+        width: 260px;
+        height: 260px;
         border-radius: 50%;
         overflow: hidden;
-        background-color: #1e384c;
+        // background-color: #1e384c;
     }
 
     &__circle {
+        width: 250px;
+        height: 250px;
+
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        overflow: hidden;
+        box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
+
+        &_inner {
+            width: 220px;
+            height: 220px;
+            box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+                inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+                -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+                0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+                0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    &__wave {
         position: absolute;
         left: -50%;
         bottom: 0%;
@@ -50,7 +63,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 100;
-        color: white;
+        color: black;
         font-size: 24px;
     }
 }

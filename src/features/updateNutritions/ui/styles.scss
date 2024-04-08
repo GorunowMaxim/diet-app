@@ -16,41 +16,22 @@
         font-weight: 600;
     }
 
-    &__change-value {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
 
-    &__input {
-        width: 50px;
-        height: 34px;
-        border-radius: 6px;
-        border: 1px solid black;
-        text-align: center;
-
-        &::-webkit-inner-spin-button {
-            display: none;
-        }
-    }
-
-    &__button {
-        background-color: transparent;
-
-    }
-
-    &__icon {
-        width: 16px;
-    }
 
     &__progressbar {
         height: 15px;
-        background-color: #b3b3b3;
+        background-color: transparent;
         width: 400px;
         border-radius: 8px;
+        background-color: rgb(233, 233, 233);
+        box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+            inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+            -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+            0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+            0px 12px 10px -10px rgba(0, 0, 0, 0.05);
     }
 }
 
 .MuiLinearProgress-bar {
-    background-color: #359cebe7;
+    background: linear-gradient(to right, #98FB98, #55c9f0);
 }

@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 
-import { WaterWidgetContainer } from '@/entities/waterWidgetContainer';
+
 import { UpdateWaterWidget } from '@/features/updateWaterWidget';
+import { WaterWidgetContainer } from '@/entities/widgetContainer';
 
 export const WaterWidget = () => {
 	const [waterLevel, setWaterLevel] = useState<number>(100);

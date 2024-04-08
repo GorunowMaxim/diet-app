@@ -12,11 +12,22 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #1e384c;
-        color: white;
+        color: black;
         font-size: 24px;
         font-weight: 300;
         border-radius: 50%;
         line-height: 0%;
+        box-shadow:
+            -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+            0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+            0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+
+        &:active {
+            box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
+                inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
+                -0.5px -0.5px 0px rgba(255, 255, 255, 1),
+                0.5px 0.5px 0px rgba(0, 0, 0, 0.15),
+                0px 12px 10px -10px rgba(0, 0, 0, 0.05);
+        }
     }
 }
