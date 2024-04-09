@@ -20,27 +20,14 @@ const UpdateNutritionsContainer = ({ children, name }: { children: ReactNode; na
 
 export const UpdateNutritions = ({ name }: { name: string }) => {
 	const [nutritionValue, setNutritionValue] = useState<number>(0);
-	const [currentInputValue, setCurrentInputValue] = useState<number>(0);
 	const [maxNutritionValue, setmaxNutritionValue] = useState<number>(100);
-	const [isChanging, setChange] = useState(false);
-
-	const handleChangeValue = () => {
-		setChange(!isChanging);
-		if (isChanging) setNutritionValue((prev) => prev + currentInputValue);
-	};
-
-	const inputChangeValue = (e: ChangeEvent<HTMLInputElement>) => {
-		setCurrentInputValue(Number(e.target.value));
-	};
 
 	return (
 		<UpdateNutritionsContainer name={name}>
 			<UpdateInputValue
-				isChanging={isChanging}
-				inputChangeValue={inputChangeValue}
+				setInputValue={setNutritionValue}
 				currentValue={nutritionValue}
 				maxValue={maxNutritionValue}
-				handleChangeValue={handleChangeValue}
 			/>
 			<LinearProgress
 				color='info'

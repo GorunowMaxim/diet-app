@@ -168,6 +168,14 @@ sup {
 	}
 }
 
+.tooltip {
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	width: 20px;
+	cursor: pointer;
+}
+
 @media (min-height: 900px) {
 	.wrapper {
 		height: 100vh;

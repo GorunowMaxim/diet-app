@@ -5,8 +5,10 @@ import { motion } from 'framer-motion';
 import { WaterWidget } from '@/widgets/waterWidget';
 import { NutritionWidget } from '@/widgets/nutritionWidget';
 import { CaloriesWidget } from '@/widgets/caloriesWidget';
+import { DailyChallengeWidget } from '@/widgets/dailyChallengeWidget';
 
 import './styles.scss';
+import { TrackerHabitsWidget } from '@/widgets/trackerHabitsWidget/ui/TrackerHabitsWidget';
 
 const container = {
 	hidden: { opacity: 1, scale: 0 },
@@ -20,16 +22,6 @@ const container = {
 	},
 };
 
-const botItem = {
-	hidden: { y: 20, opacity: 0 },
-	visible: {
-		y: 0,
-		opacity: 1,
-	},
-};
-
-
-
 export const DailyPlanPage = () => {
 	return (
 		<div className='daily-plan'>
@@ -37,7 +29,8 @@ export const DailyPlanPage = () => {
 				<WaterWidget />
 				<NutritionWidget />
 				<CaloriesWidget />
-				<WaterWidget />
+				<DailyChallengeWidget />
+				<TrackerHabitsWidget />
 			</motion.div>
 		</div>
 	);

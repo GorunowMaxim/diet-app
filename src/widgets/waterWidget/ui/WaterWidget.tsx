@@ -2,9 +2,11 @@
 
 import { useState } from 'react';
 
-
 import { UpdateWaterWidget } from '@/features/updateWaterWidget';
 import { WaterWidgetContainer } from '@/entities/widgetContainer';
+import CustomTooltip from '@/shared/ui/tooltip/Tooltip';
+
+const tooltipText: string = 'This is your cap of daily water glasses. 1 glass = 300ml of water';
 
 export const WaterWidget = () => {
 	const [waterLevel, setWaterLevel] = useState<number>(100);
@@ -15,6 +17,7 @@ export const WaterWidget = () => {
 	return (
 		<>
 			<WaterWidgetContainer waterLevel={waterLevel} count={count} maxCount={maxCount}>
+				<CustomTooltip title={tooltipText} />
 				<UpdateWaterWidget
 					waterLevel={waterLevel}
 					setWaterLevel={setWaterLevel}

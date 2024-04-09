@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import './globals.scss';
 import ProgressBarProviders from '@/app/providers/progressBarProvider/ProgressBarProvider';
 import StoreProvider from './StoreProvider';
-import { makeStore } from '@/app/store/store';
+
+import './globals.scss';
+
 
 const inter = Inter({ subsets: ['latin'] });
 
