@@ -10,11 +10,11 @@ const botItem = {
 	},
 };
 
-export const DailyChallengeContainer = ({ children }: { children: ReactNode }) => {
+export const DailyChallengeContainer = ({ children, src }: { children: ReactNode; src: string }) => {
 	return (
 		<div className='daily-challenge-widget'>
 			<div className='daily-challenge__img-block'>
-				<img className='daily-challenge__img' src='/images/step.svg' alt='' />
+				<img className='daily-challenge__img' src={src} alt='' />
 			</div>
 			{children}
 		</div>

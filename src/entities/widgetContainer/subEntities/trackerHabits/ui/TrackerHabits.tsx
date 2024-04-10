@@ -14,21 +14,32 @@ const topItem = {
 
 const tolltipText: string = 'This is your habits of the last week';
 
-function createData(name: string, calories: number, fat: number, carbs: number, protein: number) {
-	return { name, calories, fat, carbs, protein };
+function createData(
+	name: string,
+	monday: 'check' | 'cross',
+	tuesday: 'check' | 'cross',
+	wensday: 'check' | 'cross',
+	thursday: 'check' | 'cross',
+	friday: 'check' | 'cross',
+	satturday: 'check' | 'cross',
+	sunday: 'check' | 'cross'
+) {
+	return { name, monday, tuesday, wensday, thursday, friday, satturday, sunday };
 }
 
 const rows = [
-	createData('water', 159, 6.0, 24, 4.0),
-	createData('nutritions', 237, 9.0, 37, 4.3),
-	createData('ckal', 262, 16.0, 24, 6.0),
-	createData('daily challenge', 305, 3.7, 67, 4.3),
+	createData('water', 'check', 'cross', 'check', 'cross', 'cross', 'cross', 'check'),
+	createData('nutritions', 'check', 'cross', 'check', 'cross', 'cross', 'cross', 'check'),
+	createData('ckal', 'check', 'cross', 'check', 'cross', 'cross', 'cross', 'check'),
+	createData('daily challenge', 'check', 'cross', 'check', 'cross', 'cross', 'cross', 'check'),
 ];
 
-const imgCheck = ({ type, className }: { type: string; className: string }) => {
-	return type === 'check' ? 
-    <img className={className} src='/images/check.svg' alt='' /> : 
-    <img className={className} src='/images/check.svg' alt='' />;
+export const imgCheck = ({ type, className }: { type: 'check' | 'cross'; className?: string }) => {
+	return type === 'check' ? (
+		<img className={`check-icon ${className}`} src='/images/check.svg' alt='check' />
+	) : (
+		<img className={`check-icon ${className}`} src='/images/cross.svg' alt='cross' />
+	);
 };
 
 const days = ['M', 'T', 'W', 'Th', 'F', 'St', 'S'];
@@ -38,13 +49,14 @@ export const TrackerHabits = () => {
 		<WidgetContainer type='small' variants={topItem}>
 			<CustomTooltip title={tolltipText} />
 			<TableContainer className='tracker-container'>
+				<h3 className='tracker-headline'>Tracker habits</h3>
 				<Table className='tracker-table' aria-label='simple table'>
 					<TableHead>
 						<TableRow>
 							<TableCell className='tracker-table__thead-item'></TableCell>
 							{days.map((day, index) => {
 								return (
-									<TableCell key={index} className='tracker-table__thead-item' align='right'>
+									<TableCell key={index} className='tracker-table__thead-item' align='center'>
 										{day}
 									</TableCell>
 								);
@@ -57,17 +69,61 @@ export const TrackerHabits = () => {
 								<TableCell className='tracker-table__tbody-item' component='th' scope='row'>
 									{row.name}
 								</TableCell>
-								<TableCell className='tracker-table__tbody-item' align='right'>
-									{row.calories}
+								<TableCell
+									className='tracker-table__tbody-item'
+									component='th'
+									scope='row'
+									align='center'
+								>
+									{imgCheck({ type: row.monday, className: 'tracker-table__icon' })}
 								</TableCell>
-								<TableCell className='tracker-table__tbody-item' align='right'>
-									{row.fat}
+								<TableCell
+									className='tracker-table__tbody-item'
+									component='th'
+									scope='row'
+									align='center'
+								>
+									{imgCheck({ type: row.tuesday, className: 'tracker-table__icon' })}
 								</TableCell>
-								<TableCell className='tracker-table__tbody-item' align='right'>
-									{row.carbs}
+								<TableCell
+									className='tracker-table__tbody-item'
+									component='th'
+									scope='row'
+									align='center'
+								>
+									{imgCheck({ type: row.wensday, className: 'tracker-table__icon' })}
 								</TableCell>
-								<TableCell className='tracker-table__tbody-item' align='right'>
-									{row.protein}
+								<TableCell
+									className='tracker-table__tbody-item'
+									component='th'
+									scope='row'
+									align='center'
+								>
+									{imgCheck({ type: row.thursday, className: 'tracker-table__icon' })}
+								</TableCell>
+								<TableCell
+									className='tracker-table__tbody-item'
+									component='th'
+									scope='row'
+									align='center'
+								>
+									{imgCheck({ type: row.friday, className: 'tracker-table__icon' })}
+								</TableCell>
+								<TableCell
+									className='tracker-table__tbody-item'
+									component='th'
+									scope='row'
+									align='center'
+								>
+									{imgCheck({ type: row.satturday, className: 'tracker-table__icon' })}
+								</TableCell>
+								<TableCell
+									className='tracker-table__tbody-item'
+									component='th'
+									scope='row'
+									align='center'
+								>
+									{imgCheck({ type: row.sunday, className: 'tracker-table__icon' })}
 								</TableCell>
 							</TableRow>
 						))}

@@ -14,3 +14,19 @@
         padding: 25px 0px;
     }
 }
+
+.grats {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.842);
+    border-radius: 12px;
+    font-weight: 600;
+}

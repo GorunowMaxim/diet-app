@@ -3,7 +3,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 25px;
     height: 100%;
 
     &__circle-wrapper {
@@ -16,8 +15,8 @@
     }
 
     &__circle {
-        width: 250px;
-        height: 250px;
+        width: 230px;
+        height: 230px;
 
         border-radius: 50%;
         position: absolute;
@@ -28,8 +27,8 @@
         box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15), -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
 
         &_inner {
-            width: 220px;
-            height: 220px;
+            width: 200px;
+            height: 200px;
             box-shadow: inset 4px 4px 6px -1px rgba(0, 0, 0, 0.2),
                 inset -4px -4px 6px -1px rgba(255, 255, 255, 0.7),
                 -0.5px -0.5px 0px rgba(255, 255, 255, 1),
