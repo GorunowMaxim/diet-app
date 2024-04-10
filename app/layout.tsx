@@ -6,7 +6,6 @@ import StoreProvider from './StoreProvider';
 
 import './globals.scss';
 
-
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {

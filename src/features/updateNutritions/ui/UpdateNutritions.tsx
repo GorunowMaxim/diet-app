@@ -1,7 +1,7 @@
 'use client';
 
 import { LinearProgress } from '@mui/material';
-import { ChangeEvent, ReactNode, useState } from 'react';
+import { ReactNode, useState } from 'react';
 
 import { UpdateInputValue } from '@/features/updateInputValue';
 
@@ -34,6 +34,7 @@ export const UpdateNutritions = ({ name }: { name: string }) => {
 				className='nutritions-block__progressbar'
 				variant='determinate'
 				value={nutritionValue}
+				sx={{}}
 			/>
 			{nutritionValue === maxNutritionValue ? (
 				<img className='nutritions-block__icon' src='/images/check.svg' alt='change-button' />
