@@ -1,5 +1,8 @@
+import { CalculatorPage } from "@/subPages/dashboardPages";
+
+
 const Calculator = () => {
-	return <h1>Calculator</h1>;
+	return <CalculatorPage />;
 };
 
 export default Calculator;
