@@ -59,14 +59,6 @@ export const ProfilePageTabs = () => {
 				>
 					<UpdateProfileUserData />
 				</TabContainer>
-				<TabContainer
-					className='profile-body__tabs-block'
-					activeClassName='profile-body__tabs-block_visible'
-					activeTab={tabId}
-					id='2'
-				>
-					<h1>hello 2</h1>
-				</TabContainer>
 			</div>
 		</>
 	);
