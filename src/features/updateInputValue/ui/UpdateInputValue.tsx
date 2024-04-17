@@ -18,10 +18,12 @@ export const UpdateInputValue = ({ setInputValue, currentValue, maxValue }: Upda
 	const [isChanging, setChangingState] = useState<boolean>(false);
 	const [currentInputValue, setCurrentInputValue] = useState<number>(0);
 
+	const value = currentValue + currentInputValue > maxValue ? maxValue : currentValue + currentInputValue
+
 	const handleClick = () => {
 		setChangingState(!isChanging);
 		setCurrentInputValue(0);
-		if (isChanging) setInputValue(currentValue + currentInputValue);
+		if (isChanging) setInputValue(value);
 	};
 
 	const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {

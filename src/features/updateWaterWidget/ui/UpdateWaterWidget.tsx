@@ -8,6 +8,7 @@ interface UpdateWaterWidgetProps {
 	waterLevel: number;
 	diffNumber: number;
 	count: number;
+	maxCount: number;
 	setWaterLevel: (num: number) => void;
 	setCount: (num: number) => void;
 }
@@ -18,6 +19,7 @@ export const UpdateWaterWidget = ({
 	setWaterLevel,
 	setCount,
 	count,
+	maxCount,
 }: UpdateWaterWidgetProps) => {
 	const incrementWaterLevel = () => {
 		if (waterLevel > 0) {
@@ -27,7 +29,8 @@ export const UpdateWaterWidget = ({
 	};
 
 	const decremetWaterLevel = () => {
-		if (waterLevel < 100) {
+		if (waterLevel < maxCount * diffNumber) {
+			console.log(waterLevel);
 			setWaterLevel(waterLevel + diffNumber);
 			setCount(count - 1);
 		}

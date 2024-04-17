@@ -18,25 +18,26 @@ const UpdateNutritionsContainer = ({ children, name }: { children: ReactNode; na
 	);
 };
 
-export const UpdateNutritions = ({ name }: { name: string }) => {
+export const UpdateNutritions = ({ name, maxNutritionValue }: { name: string; maxNutritionValue: string }) => {
 	const [nutritionValue, setNutritionValue] = useState<number>(0);
-	const [maxNutritionValue, setmaxNutritionValue] = useState<number>(100);
+
+	const value = (nutritionValue * 100) / Number(maxNutritionValue);
 
 	return (
 		<UpdateNutritionsContainer name={name}>
 			<UpdateInputValue
 				setInputValue={setNutritionValue}
 				currentValue={nutritionValue}
-				maxValue={maxNutritionValue}
+				maxValue={Number(maxNutritionValue)}
 			/>
 			<LinearProgress
 				color='info'
 				className='nutritions-block__progressbar'
 				variant='determinate'
-				value={nutritionValue}
+				value={value}
 				sx={{}}
 			/>
-			{nutritionValue === maxNutritionValue ? (
+			{nutritionValue >= Number(maxNutritionValue) ? (
 				<img className='nutritions-block__icon' src='/images/check.svg' alt='change-button' />
 			) : null}
 		</UpdateNutritionsContainer>

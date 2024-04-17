@@ -26,12 +26,10 @@ const tooltipTextCommon: string = 'This is your special daily challenge to incre
 const tooltipTextGym: string = 'This is time to physical activity for a day in minutes';
 const tooltipTextSteps: string = 'This is steps count for a day';
 
-export const DailyChallengeWidget = () => {
+export const DailyChallengeWidget = ({ maxStepsCount, maxMinutes }: { maxStepsCount: string; maxMinutes: string }) => {
 	const [stepsCount, setStepsCount] = useState<number>(0);
-	const [maxStepsCount, setMaxStepsCount] = useState<number>(100);
 
 	const [minutes, setMinutes] = useState<number>(0);
-	const [maxMinutes, setMaxMinutes] = useState<number>(60);
 
 	return (
 		<WidgetContainer type='small' variants={botItem}>
@@ -40,21 +38,25 @@ export const DailyChallengeWidget = () => {
 				<h3 className='daily-widget__headline'>Daily challenge</h3>
 				<DailyChallengeContainer src='/images/gym.svg'>
 					<CustomTooltip title={tooltipTextGym} />
-					{minutes == maxMinutes || minutes > maxMinutes ? (
+					{minutes == Number(maxMinutes) || minutes > Number(maxMinutes) ? (
 						<Congrats />
 					) : (
-						<UpdateInputValue setInputValue={setMinutes} currentValue={minutes} maxValue={maxMinutes} />
+						<UpdateInputValue
+							setInputValue={setMinutes}
+							currentValue={minutes}
+							maxValue={Number(maxMinutes)}
+						/>
 					)}
 				</DailyChallengeContainer>
 				<DailyChallengeContainer src='/images/step.svg'>
 					<CustomTooltip title={tooltipTextSteps} />
-					{stepsCount === maxStepsCount || stepsCount > maxStepsCount ? (
+					{stepsCount === Number(maxStepsCount) || stepsCount > Number(maxStepsCount) ? (
 						<Congrats />
 					) : (
 						<UpdateInputValue
 							setInputValue={setStepsCount}
 							currentValue={stepsCount}
-							maxValue={maxStepsCount}
+							maxValue={Number(maxStepsCount)}
 						/>
 					)}
 				</DailyChallengeContainer>

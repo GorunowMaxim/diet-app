@@ -1,41 +1,51 @@
 import { connectDB } from '@/shared/lib/mongodb';
+import getDataFromToken from '@/shared/lib/utils/getDataFromToken';
 import User from '@/shared/models/userModel';
-import bcryptjs from 'bcryptjs';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 connectDB();
 
-export async function POST(req: Request) {
+export async function PATCH(req: NextRequest) {
 	try {
 		const reqBody = await req.json();
+		const userData = await getDataFromToken(req);
+		const { id } = userData;
 
-		const { weight, height, age, email, userName, password  } = reqBody;
+		const user = await User.findOne({ _id: id });
+		const { activity, goal, weight, height, age, sex } = reqBody;
+		let result;
 
-		const user = await User.findOne({ email });
-		const existUserName = await User.findOne({ userName });
-
-		console.log(user, existUserName);
-
-		if (existUserName) {
-			return NextResponse.json({ error: 'User with this username already exists' }, {status: 400});
+		if (sex === 'men') {
+			const bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+			result = bmr * Number(activity);
+		} else {
+			const bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+			result = bmr * Number(activity);
 		}
 
-		if (user) {
-			return NextResponse.json({ error: 'User with this email already exists' }, {status: 400});
+		if (goal === 'get weight') {
+			result += 500;
+		} else {
+			result -= 500;
 		}
 
-		const salt = await bcryptjs.genSalt(10);
-		const hashPassword = await bcryptjs.hash(password, salt);
+		const protein = (result * 0.2) / 4;
+		const fats = (result * 0.3) / 9;
+		const carbs = (result * 0.5) / 4;
+		const glasses = (weight * 0.035) / 0.3;
 
-		const newUser = new User({
-			userName,
-			email,
-			password: hashPassword,
-		});
-		const savedUser = await newUser.save();
+		user.dailyPlan.ckal = Math.round(result);
+		user.dailyPlan.protein = Math.round(protein);
+		user.dailyPlan.fats = Math.round(fats);
+		user.dailyPlan.carbs = Math.round(carbs);
+		user.dailyPlan.water = Math.round(glasses);
 
-		return NextResponse.json({ message: 'User created', success: true, savedUser });
+
+		console.log('result', result);
+		const savedUser = await user.save();
+
+		return NextResponse.json({ message: 'User changed', success: true });
 	} catch (error: any) {
-		return NextResponse.json({ error: error.message }, {status: 500});
+		return NextResponse.json({ error: error.message }, { status: 500 });
 	}
 }

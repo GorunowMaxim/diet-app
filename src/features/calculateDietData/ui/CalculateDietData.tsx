@@ -10,6 +10,8 @@ import './styles.scss';
 
 import Button from '@/shared/ui/button/Button';
 import { ReactNode } from 'react';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 interface BodyInputs {
 	[index: string]: {
@@ -106,12 +108,17 @@ const FormBlock: React.FC<FormBlockProps> = ({ name, children }) => {
 };
 
 export const CalculateDietData = () => {
-	const {
-		register,
-		handleSubmit,
-	} = useForm<Inputs>();
+	const { register, handleSubmit } = useForm<Inputs>();
 
-	const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+	const onSubmit: SubmitHandler<Inputs> = async (data) => {
+		try {
+			const response = await axios.patch('/api/dashboard/calculator', data);
+			toast.success('calculate is finishing');
+		} catch (e: any) {
+			console.log('error', e);
+			toast.error(e.response.data.error);
+		}
+	};
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)} className='calculator-form'>
@@ -119,27 +126,27 @@ export const CalculateDietData = () => {
 				<FormBlock name='1. Choose your sex'>
 					<Label className='calculator__radio-label'>
 						<RadioInput
-							value='men'
-							nameButton='men'
+							value='man'
+							nameButton='man'
 							register={register}
 							nameRegister='sex'
 							params={{ required: true }}
 						>
 							<span className='calculator__fake-radio'>
-								<span className='calculator__fake-text'>men</span>
+								<span className='calculator__fake-text'>man</span>
 							</span>
 						</RadioInput>
 					</Label>
 					<Label className='calculator__radio-label'>
 						<RadioInput
-							value='women'
-							nameButton='women'
+							value='woman'
+							nameButton='woman'
 							register={register}
 							nameRegister='sex'
 							params={{ required: true }}
 						>
 							<span className='calculator__fake-radio'>
-								<span className='calculator__fake-text'>women</span>
+								<span className='calculator__fake-text'>woman</span>
 							</span>
 						</RadioInput>
 					</Label>

@@ -35,6 +35,36 @@ const userSchema = new mongoose.Schema({
 			type: String,
 		},
 	},
+	dailyPlan: {
+		water: {
+			type: String,
+			default: '10',
+		},
+		protein: {
+			type: String,
+			default: '100',
+		},
+		carbs: {
+			type: String,
+			default: '100',
+		},
+		fats: {
+			type: String,
+			default: '100',
+		},
+		ckal: {
+			type: String,
+			default: '1200',
+		},
+		gymTime: {
+			type: String,
+			default: '60',
+		},
+		walk: {
+			type: String,
+			default: '4000',
+		},
+	},
 });
 
 const User = mongoose.models.users || mongoose.model('users', userSchema);

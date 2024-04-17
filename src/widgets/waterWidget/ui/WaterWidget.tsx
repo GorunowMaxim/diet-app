@@ -8,15 +8,18 @@ import CustomTooltip from '@/shared/ui/tooltip/Tooltip';
 
 const tooltipText: string = 'This is your cap of daily water glasses. 1 glass = 300ml of water';
 
-export const WaterWidget = () => {
+interface WaterWidgetProps {
+	water: string;
+}
+
+export const WaterWidget: React.FC<WaterWidgetProps> = ({ water }) => {
 	const [waterLevel, setWaterLevel] = useState<number>(100);
 	const [count, setCount] = useState<number>(0);
-	const [maxCount, setMaxCount] = useState<number>(10);
-	const diffNumber = 10;
+	const diffNumber = 100 / Number(water);
 
 	return (
 		<>
-			<WaterWidgetContainer waterLevel={waterLevel} count={count} maxCount={maxCount}>
+			<WaterWidgetContainer waterLevel={waterLevel} count={count} maxCount={Number(water)}>
 				<CustomTooltip title={tooltipText} />
 				<UpdateWaterWidget
 					waterLevel={waterLevel}
@@ -24,6 +27,7 @@ export const WaterWidget = () => {
 					diffNumber={diffNumber}
 					setCount={setCount}
 					count={count}
+					maxCount={Number(water)}
 				/>
 			</WaterWidgetContainer>
 		</>
