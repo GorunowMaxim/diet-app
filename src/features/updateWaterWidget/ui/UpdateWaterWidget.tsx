@@ -29,8 +29,7 @@ export const UpdateWaterWidget = ({
 	};
 
 	const decremetWaterLevel = () => {
-		if (waterLevel < maxCount * diffNumber) {
-			console.log(waterLevel);
+		if (waterLevel < maxCount * diffNumber && waterLevel < 100) {
 			setWaterLevel(waterLevel + diffNumber);
 			setCount(count - 1);
 		}
