@@ -1,4 +1,4 @@
-import { CalculatorPage } from "@/pages/dashboardPages";
+import { CalculatorPage } from "@/subPages/dashboardPages";
 
 const Calculator = () => {
 	return <CalculatorPage />;
