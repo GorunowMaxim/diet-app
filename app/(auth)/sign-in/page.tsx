@@ -1,4 +1,4 @@
-import { SignInPage } from "@/subPages/authPages";
+import { SignInPage } from "@/pages/authPages";
 
 
 const SignIn = () => {

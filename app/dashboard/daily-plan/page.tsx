@@ -1,6 +1,6 @@
 import { Tilt_Neon } from 'next/font/google';
 
-import { DailyPlanPage } from '@/subPages/dashboardPages';
+import { DailyPlanPage } from '@/pages/dashboardPages';
 
 const neon = Tilt_Neon({ subsets: ['latin'] });
 

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import ProgressBarProviders from '@/app/providers/progressBarProvider/ProgressBarProvider';
-import StoreProvider from './StoreProvider';
 
 import './globals.scss';
 
@@ -22,9 +21,7 @@ export default function RootLayout({
 		<html lang='en'>
 			<body className={inter.className}>
 				<ProgressBarProviders>
-					<StoreProvider>
-						<div className='wrapper'>{children}</div>
-					</StoreProvider>
+					<div className='wrapper'>{children}</div>
 				</ProgressBarProviders>
 			</body>
 		</html>
